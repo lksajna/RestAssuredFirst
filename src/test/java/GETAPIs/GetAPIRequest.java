@@ -21,7 +21,7 @@ public void setup() {
 	RestAssured.baseURI = "https://gorest.co.in/";
 	request = RestAssured.given();
 	request.header("Authorization","Bearer 835ea27f8cda6fa2cfd8f15c5869d89810ecdaeec8a565e17c1c87004a77d2dc");
-	
+	System.out.println("A sample print statment to check for git updation");
 }
 @Test
 public void getAllUserAPITest(){
@@ -29,7 +29,7 @@ public void getAllUserAPITest(){
 	Response response=request.get("public/v2/users/");
 	
 	int statusCode=response.statusCode();
-	System.out.println("Status Code ---> "+statusCode);
+	System.out.println("Status Code is ---> "+statusCode);
 	
 	//Verification point
 	Assert.assertEquals(statusCode, 200);
